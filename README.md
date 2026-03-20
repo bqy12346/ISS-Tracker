@@ -4,11 +4,12 @@ A small Flask-based project for tracking the International Space Station (ISS), 
 
 ## Features
 
-- Flask web app with multiple pages
-- Live ISS latitude / longitude updates
-- Turtle-based ISS map tracker
+- Multi-page Flask web application
+- Live ISS latitude and longitude updates
+- ISS facts page
+- Launch and tracking page
 - Zurich ISS pass prediction using `skyfield`
-- Static assets and HTML templates separated into standard Flask folders
+- Static assets organized with standard Flask `templates/` and `static/` folders
 
 ## Project structure
 
@@ -36,6 +37,7 @@ iss-tracker-repo/
 │   └── ISS Trajectory Data.txt
 └── archive_Homepage.html
 ```
+
 
 ## Run locally
 
@@ -66,10 +68,4 @@ http://127.0.0.1:5000/
 - `start_iss.command` was not included because it references `iss_server.py`, which is not present in the uploaded files.
 - `Homepage.html` appears to be an older standalone page and was placed in the archive area instead of the main app flow.
 
-## Suggested next cleanup
 
-- Move secrets into `.env`
-- Rename `run_original.py` to something clearer like `tracker.py`
-- Store generated files separately from source-controlled files
-- Add screenshots to the README
-- Add a license
