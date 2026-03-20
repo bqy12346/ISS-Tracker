@@ -2,6 +2,7 @@ from skyfield.api import load, wgs84
 from datetime import datetime, timezone
 import requests
 import pytz
+import os
 
 # Location setup for Zurich
 latitude = 47.3769
@@ -40,7 +41,12 @@ def get_iss_passes(days=7):
 
 # Get weather forecast (cloud coverage %) for a specific UTC time
 def get_weather_forecast(dt_utc):
-    API_KEY = 'd51432d74088c3955c8eb862f8b70600'
+    API_KEY = os.getenv("OPENWEATHER_API_KEY")
+
+    if not API_KEY:
+        raise RuntimeError("Missing OPENWEATHER_API_KEY environment variable." "Please set it before running zurich.py")
+
+        
     url = "https://api.openweathermap.org/data/2.5/forecast"
 
     params = {
@@ -50,9 +56,18 @@ def get_weather_forecast(dt_utc):
         'units': 'metric'
     }
 
-    response = requests.get(url, params=params)
-    forecast = response.json()
-    # print(forecast)
+    
+    try:
+        response = requests.get(url, params=params, timeout=10)
+        response.raise_for_status()
+        forecast = response.json()
+    except requests.RequestException as e:
+        print(f"Weather API request failed: {e}")
+        return None
+
+    if "list" not in forecast or not forecast["list"]:
+        print("Weather API returned no forecast data.")
+        return None
 
     # Find the forecast entry closest to the target hour
     target_hour = dt_utc.replace(minute=0, second=0, microsecond=0, tzinfo=timezone.utc)  # Rounds it down to the nearest whole hour
