@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ISS Tracker Running</title>
+  <script>
+    async function updatePosition() {
+      try {
+        const res = await fetch('/static/iss_position.json');
+        const data = await res.json();
+        document.getElementById("lat").textContent = data.lat.toFixed(4);
+        document.getElementById("lon").textContent = data.lon.toFixed(4);
+      } catch (e) {
+        console.error("Failed to load position:", e);
+      }
+    }
+
+    
+    window.onload = updatePosition;
+
+    async function updateZurichOutput() {
+    try {
+        const res = await fetch('/zurich-output');
+        const data = await res.json();
+        document.getElementById("zurich-output").textContent = data.output || data.error || "No output.";
+    } catch (e) {
+        document.getElementById("zurich-output").textContent = "Error fetching Zurich output.";
+    }
+    }
+
+    // 页面加载时执行
+    window.onload = function() {
+    updatePosition();  // 原来的
+    updateZurichOutput();  // 新加的
+
+    setInterval(updatePosition, 3000);
+    setInterval(updateZurichOutput, 5000);
+    };
+  </script>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    .bg-image {
+      background-image: url("/static/xingkong.jpg");
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: fixed;
+      width: 100%;
+      z-index: -1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+      padding-top: 100px;
+    }
+
+    .button-group {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.custom-btn {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 12px 24px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.custom-btn:hover {
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+<body>
+  <div class="bg-image"></div>
+  <div class="content">
+    <h1><a href="/stop-script" style="color: white; text-decoration: none;">ISS Tracker Launched</a></h1>
+    <p>The turtle window should open automatically.</p>
+    <h2>Live Coordinates</h2>
+    <p>Latitude: <span id="lat">...</span></p>
+    <p>Longitude: <span id="lon">...</span></p>
+    <h2>Zurich Visibility</h2>
+    <pre id="zurich-output" style="font-family: monospace; white-space: pre-wrap;">Loading...</pre>
+    
+  </div>
+
+  <div class="button-group">
+    <a href="/" class="custom-btn">Homepage</a>
+    <a href="/iss_facts" class="custom-btn">ISS Facts</a>
+  </div>
+  
+</body>
+</html>

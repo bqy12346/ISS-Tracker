@@ -1,0 +1,233 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>ISS Launcher</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: Arial;
+      text-align: center;
+      margin-top: 100px;
+    }
+    button {
+      font-size: 20px;
+      padding: 15px 30px;
+      background-color: #005288;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0072c6;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚀 Launch ISS Tracker</h1>
+  <button class="custom-btn" onclick="location.href='/run-script'">Run Original ISS Code</button>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ISS Tracker</title>
+</head>
+<body style="text-align: center; margin-top: 100px; font-family: Arial;">
+    <h1>🌍 Start Live ISS Tracking</h1>
+    <form action="/run-script" method="get">
+        <button style="font-size: 20px; padding: 15px 30px;">Live Location</button>
+    </form>
+</body>
+</html> -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Welcome to our Website</title>
+   <meta name="keywords" content="" />
+   <meta name="description" content="" />
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script type="text/javascript" charset="utf-8">
+   </script>
+<style>
+   body, html {
+     height: 100%;
+     margin: 0;
+     font-family: Arial, Helvetica, sans-serif;
+   }
+   
+   * {
+     box-sizing: border-box;
+   }
+   
+   .bg-image {
+     /* 使用的图像 */
+     background-image: url("./static/xingkong.jpg");
+     
+     /* 添加模糊效果 */
+     /* filter: blur(8px);
+     -webkit-filter: blur(8px); */
+     
+     /* 全高 */
+     height: 100%; 
+     
+     /* 居中并很好地缩放图像 */
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-attachment: scroll;
+     position: fixed;
+     width: 100%;
+     z-index: -1;
+   }
+   .bg-text {
+      background-color: rgb(0,0,0); /* 后备颜色 */
+      background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+      color: white;
+      font-weight: bold;
+      border: 3px solid #f1f1f1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      width: 80%;
+      padding: 20px;
+      text-align: match-parent;
+   }
+   a:link, a:visited {
+      background-color: #ffffff00;
+      color: white;
+      padding: 15px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+   }
+
+   a:hover, a:active {
+      background-color: rgba(255, 255, 255, 0);
+   }
+   h3.serif{font-family:"Times New Roman",Times,serif;}
+   p.serif{font-family:"Times New Roman",Times,serif;}
+   h1.serif{font-family:"Times New Roman",Times,serif;}
+   h2.serif{font-family:"Times New Roman",Times,serif;}
+   h4.serif{font-family:"Times New Roman",Times,serif;}
+   th.serif{font-family:"Times New Roman",Times,serif;}
+   /* 下拉菜单 */
+   .dropbtn {
+    background-color: #4caf4f00;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e4100;
+}
+
+/* 按钮格式 */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.custom-btn {
+  flex: 1 1 150px;
+  max-width: 150px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #005288;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.custom-btn:hover {
+  background-color: #0072c6;
+}
+
+</style>
+
+
+ </head>
+ <body>
+   <div class="bg-image"></div>
+    <!-- 标题标签 -->
+    <div class="bg-text">
+      <div id="menu" style="background-color:#ffd90000;height:200px;width: 250px;float:left;">
+      <div class="dropdown">
+         <button class="dropbtn" onclick="location.href='/index'"><img src="./static/ISS_emblem.png" alt="menu" width="200" height="200"></button>
+       </div>
+   </div>
+   <div id="content" style="background-color:#eeeeee00;float:left;">
+      <h1 class="serif">International Space Station Tracker</h1>
+      <h2 style="font-weight: lighter"; class="serif">ITET - Python for Engineers</h4>
+
+      <!-- 段落标签 -->
+      <h3 style="font-weight: lighter"; class="serif">
+         Welcome to our website!
+         <!-- 链接网页 -->
+      </p>
+      
+
+     <!-- 按钮区域 -->
+     <div class="button-group">
+       
+       <button class="custom-btn" onclick="location.href='/run-script'">Live Location</button>
+    
+      
+       
+       <button class="custom-btn" onclick="location.href='/iss_facts'">ISS Facts</button>
+      
+      
+        
+       <!-- <button class="custom-btn" onclick="location.href='iss_facts.html'">ISS Facts</button> -->
+       <!-- <button class="custom-btn" onclick="location.href='/team_members'">Team Members</button> -->
+     </div>
+    
+      <br />
+      <hr />
+   
+ </body>
+ </html>

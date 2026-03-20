@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Willkommen auf meiner privaten Homepage</title>
+   <meta name="keywords" content="" />
+   <meta name="description" content="" />
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script type="text/javascript" charset="utf-8">
+   </script>
+<style>
+   body, html {
+     height: 100%;
+     margin: 0;
+     font-family: Arial, Helvetica, sans-serif;
+   }
+   
+   * {
+     box-sizing: border-box;
+   }
+   
+   .bg-image {
+     /* 使用的图像 */
+     background-image: url("./static/xingkong.jpg");
+     
+     /* 添加模糊效果 */
+     /* filter: blur(8px);
+     -webkit-filter: blur(8px); */
+     
+     /* 全高 */
+     height: 100%; 
+     
+     /* 居中并很好地缩放图像 */
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-attachment: scroll;
+     position: fixed;
+     width: 100%;
+     z-index: -1;
+   }
+   .bg-text {
+      background-color: rgb(0,0,0); /* 后备颜色 */
+      background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+      color: white;
+      font-weight: bold;
+      border: 3px solid #f1f1f1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      width: 80%;
+      padding: 20px;
+      text-align: match-parent;
+   }
+   a:link, a:visited {
+      background-color: #ffffff00;
+      color: white;
+      padding: 15px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+   }
+
+   a:hover, a:active {
+      background-color: rgba(255, 255, 255, 0);
+   }
+   h3.serif{font-family:"Times New Roman",Times,serif;}
+   p.serif{font-family:"Times New Roman",Times,serif;}
+   h1.serif{font-family:"Times New Roman",Times,serif;}
+   h2.serif{font-family:"Times New Roman",Times,serif;}
+   h4.serif{font-family:"Times New Roman",Times,serif;}
+   th.serif{font-family:"Times New Roman",Times,serif;}
+   /* 下拉菜单 */
+   .dropbtn {
+    background-color: #4caf4f00;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e4100;
+}
+
+/* 按钮格式 */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.custom-btn {
+  flex: 1 1 150px;
+  max-width: 150px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #005288;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.custom-btn:hover {
+  background-color: #0072c6;
+}
+
+.bg-text {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+#content {
+  max-height: 80vh;
+  overflow-y: auto;
+  width: 65%;
+  padding-right: 15px;
+}
+
+.header-box {
+  position: sticky;
+  top: 0;
+  background-color: rgba(0,0,0,0);
+  z-index: 10;
+  padding-bottom: 10px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+
+</style>
+
+
+
+
+ </head>
+ <body>
+   <div class="bg-image"></div>
+    <!-- 标题标签 -->
+      <div class="bg-text" style="display: flex; gap: 20px; align-items: flex-start; justify-content: center; max-height: 90vh; overflow: hidden;">
+  
+      <!-- 左边图标 -->
+      <div id="menu" style="background-color:#ffd90000;height:200px;width: 250px;">
+        <div class="dropdown">
+          <button class="dropbtn" onclick="location.href='/index'">
+            <img src="./static/ISS_emblem.png" alt="menu" width="200" height="200">
+          </button>
+        </div>
+
+      </div>
+    
+      <!-- 右边文字内容，添加滚动条 -->
+      <!-- 右边内容区域：保持原样，只调整内部结构 -->
+   <div id="content" style="background-color:#eeeeee00; color:white; font-family:'Times New Roman', Times, serif; line-height:1.6; padding-right: 15px; width: 65%; height: 80vh; display: flex; flex-direction: column;">
+
+   <!-- 标题区域（始终固定） -->
+      <div style="flex-shrink: 0;">
+         <h1 class="serif">ISS Facts</h1>
+         <!-- <h2 style="font-weight: lighter;" class="serif">ITET Python for Engineering</h2> -->
+         <p class="serif">ITET Python for Engineers</p>
+         <hr />
+      </div>
+   
+   <!-- 横线以下的 Facts 区域，可滚动 -->
+   <div style="flex-grow: 1; overflow-y: auto; padding-right: 10px;">
+     <h2>1 Basic Information</h2>
+     <ul>
+       <li><strong>Name:</strong> International Space Station (ISS)</li>
+       <li><strong>Launched:</strong> First module launched in 1998</li>
+       <li><strong>First crewed mission:</strong> November 2, 2000 (Expedition 1)</li>
+       <li><strong>Orbital altitude:</strong> ~400 km (248 miles) above Earth</li>
+       <li><strong>Speed:</strong> 28,000 km/h (17,500 mph)</li>
+       <li><strong>Orbits Earth:</strong> About 16 times per day</li>
+     </ul>
+ 
+     <h2>2 Structure & Design</h2>
+     <ul>
+       <li><strong>Length:</strong> ~73 meters (240 feet)</li>
+       <li><strong>Width:</strong> ~109 meters (356 feet)</li>
+       <li><strong>Mass:</strong> ~420,000 kg (925,000 pounds)</li>
+       <li><strong>Pressurized modules:</strong> 16+</li>
+       <li><strong>Solar arrays:</strong> Provide 110 kilowatts of power</li>
+     </ul>
+ 
+     <h2>3 International Collaboration</h2>
+     <p>Partner agencies: NASA (USA), Roscosmos (Russia), ESA (Europe), JAXA (Japan), CSA (Canada)</p>
+ 
+     <h2>4 Crew & Life on Board</h2>
+     <ul>
+       <li><strong>Crew size:</strong> 3 to 10 astronauts and cosmonauts</li>
+       <li><strong>Longest continuous human presence in space:</strong> Since 2000</li>
+       <li><strong>Crew rotation:</strong> Soyuz or SpaceX Crew Dragon</li>
+       <li><strong>Daily life:</strong> Experiments, exercise, maintenance, Earth observation</li>
+     </ul>
+ 
+     <h2>5 Scientific Purpose</h2>
+     <ul>
+       <li>Microgravity effects on the human body</li>
+       <li>Fluid dynamics, biology, materials science</li>
+       <li>Earth and space observation</li>
+       <li>Technology testing for future Mars missions</li>
+     </ul>
+ 
+     <h2>6 Transport</h2>
+     <p>Supplies and crew delivered by: SpaceX Dragon / Crew Dragon, Cygnus, Soyuz / Progress (and previously Space Shuttle)</p>
+ 
+     <h2>7 Fun Facts</h2>
+     <ul>
+       <li>Visible from Earth with the naked eye</li>
+       <li>Internal volume: ~388 m³ (like a Boeing 747)</li>
+       <li>Over 260 people from 20+ countries have visited</li>
+       <li>Astronauts exercise about 2 hours daily</li>
+     </ul>
+   </div>
+   <!-- 按钮区域 --><!-- 左下角按钮容器 -->
+   <div style="position: absolute; bottom: 20px; left: 40px; display: flex; gap: 20px; z-index: 3;">
+      <a href="/index" class="custom-btn">Homepage</a>
+      <a href="/run-script" class="custom-btn">Live Location</a>
+   </div>
+ 
+ </div>
+ 
+   </div>
+   
+    
+    
+ </body>
+ </html>
